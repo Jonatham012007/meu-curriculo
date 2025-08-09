@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Currículo - Jonatham Weverton</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #121212, #2a2a40);
+    background-image:
+      radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(135deg, #121212, #2a2a40);
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    color: white;
+    transition: background 0.5s, color 0.5s;
+    overflow-x: hidden;
+  }
+  a {
+    color: #00f0ff;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10,10,10,0.85);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 12px 0;
+    z-index: 10;
+    transition: background 0.5s;
+  }
+  nav a {
+    font-weight: 600;
+    color: #00f0ff;
+    transition: color 0.5s;
+  }
+  nav a:hover {
+    color: #fff;
+  }
+  section, header, footer {
+    max-width: 900px;
+    margin: 90px auto 50px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+  header {
+    text-align: center;
+    padding-top: 50px;
+    margin-top: 70px;
+  }
+  header img.zoomed {
+  transform: scale(1.3);
+  box-shadow: 0 0 60px #00f0ff;
+  cursor: zoom-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+  header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid #00f0ff;
+    box-shadow: 0 0 20px #00f0ff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  header img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #00f0ff;
+  }
+  header h1 {
+    font-size: 2.8rem;
+    margin: 20px 0 10px;
+  }
+  header p {
+    font-size: 1.2rem;
+    color: #aaa;
+    transition: color 0.5s;
+  }
+  section h2 {
+    font-size: 2rem;
+    border-left: 5px solid #00f0ff;
+    padding-left: 10px;
+    margin-bottom: 20px;
+  }
+  section p, section ul {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  ul {
+    list-style: inside disc;
+    margin-top: 10px;
+  }
+  .social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+  }
+  .social a {
+    border: 2px solid #00f0ff;
+    border-radius: 30px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .social a:hover {
+    background-color: #00f0ff;
+    color: #000;
+  }
+  .btn-download {
+    display: block;
+    width: 220px;
+    margin: 25px auto 0;
+    text-align: center;
+    background-color: #00f0ff;
+    color: #000;
+    font-weight: 700;
+    padding: 12px 0;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  .btn-download:hover {
+    background-color: #00c0cc;
+  }
+  form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  input, textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+  }
+  textarea {
+    resize: vertical;
+  }
+  button {
+    background-color: #00f0ff;
+    border: none;
+    padding: 12px;
+    font-weight: 700;
+    color: #000;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #00c0cc;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.75);
+    color: #555;
+    position: relative;
+    z-index: 1;
+  }
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+  }
+  @media (max-width: 600px) {
+    nav {
+      gap: 15px;
+      padding: 8px 5px;
+    }
+    section {
+      margin: 80px 10px 40px;
+      padding: 0 10px;
+    }
+    header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#habilidades">Habilidades</a>
+  <a href="#projetos">Projetos</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<section id="inicio">
+  <header>
+    <img src="foto.jpg.jpg" alt="Foto de Jonatham Weverton" />
+    <h1>Jonatham Weverton</h1>
+    <p>Infraestrutura de Redes • Desenvolvedor em Formação</p>
+    <a href="curriculo.pdf" download class="btn-download">📄 Baixar Currículo</a>
+    <div class="social">
+      <a href="https://github.com/Jonatham012007" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/jonatham-weverton-8a207832b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BXzaz8EgqRKuZti6LdbHu0A%3D%3D" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.instagram.com/jonatham_weverton01" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </header>
+</section>
+
+<section id="sobre">
+  <h2>Sobre Mim</h2>
+  <p>Sou Jonatham Weverton, profissional com formação técnica em Desenvolvimento de Sistemas e atual estudante de Ciências da Computação na Universidade Vale do Acaraú. Minha experiência prática em suporte e infraestrutura de redes na CODED-CED inclui administração de redes, configuração de equipamentos e uso de comandos Linux. Sou proativo, focado na resolução de problemas e busco oportunidades para aplicar minhas habilidades em desenvolvimento web e infraestrutura.</p>
+</section>
+
+<section id="habilidades">
+  <h2>Habilidades</h2>
+  <h3>Habilidades Técnicas</h3>
+  <ul>
+    <li><strong>Desenvolvimento Web:</strong> HTML, CSS, JavaScript e Python</li>
+    <li><strong>Redes e Infraestrutura:</strong> Administração de rede, configuração de switches e roteadores, comandos Linux e Modelo OSI</li>
+    <li><strong>Cloud:</strong> Formação em AWS Academy Cloud Foundations</li>
+    <li><strong>Outras Tecnologias:</strong> Conhecimento em 5G (HUAWEI ICT Academy) e princípios de UX Design</li>
+  </ul>
+
+  <h3>Habilidades Interpessoais</h3>
+  <ul>
+    <li>Proatividade e dinamismo</li>
+    <li>Comunicação e ótimo relacionamento interpessoal</li>
+    <li>Flexibilidade e fácil adaptação</li>
+    <li>Capacidade de resolução de problemas</li>
+  </ul>
+</section>
+
+<section id="projetos">
+  <h2>Experiência e Formação</h2>
+
+  <article class="experiencia">
+    <h3>Experiência em Suporte e Infraestrutura de Redes</h3>
+    <p><strong>Empresa:</strong> CODED-CED</p>
+    <p><strong>Período:</strong> Agosto/2024 - Dezembro/2024</p>
+    <p>
+      Atuei diretamente com a infraestrutura de redes, sendo responsável pela configuração de switches e roteadores, administração de rede com comandos Linux, atualizações de firmware e suporte geral de TI.
+    </p>
+  </article>
+
+  <article class="formacao">
+    <h3>Formação Técnica e Cursos de Destaque</h3>
+    <ul>
+      <li>
+        <strong>Técnico em Desenvolvimento de Sistemas (3 anos):</strong> Formação completa que serviu como base para minhas habilidades em programação e desenvolvimento.
+      </li>
+      <li>
+        <strong>Certificado Profissional em UX Design (60 horas):</strong> Curso focado na experiência do usuário, agregando valor ao desenvolvimento de interfaces.
+      </li>
+      <li>
+        <strong>HUAWEI ICT Academy 5G (60 horas):</strong> Aprofundamento em tecnologias de redes móveis de última geração.
+      </li>
+    </ul>
+  </article>
+</section>
+
+<section id="contato">
+  <h2>Contato</h2>
+  <form action="https://formspree.io/f/xeozvjpk" method="POST">
+    <input type="text" name="nome" placeholder="Seu nome" required />
+    <input type="email" name="email" placeholder="Seu email" required />
+    <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<footer>© 2025 Jonatham Weverton - Todos os direitos reservados.</footer>
+
+<canvas id="raio"></canvas>
+
+<script>
+  const canvas = document.getElementById('raio');
+const ctx = canvas.getContext('2d');
+
+let width, height;
+function resizeCanvas() {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+const fontSize = 18;
+const columns = Math.floor(width / fontSize);
+
+// Cada gota é um objeto com posição e velocidade
+class RainDrop {
+  constructor(x) {
+    this.x = x;
+    this.y = Math.random() * height;
+    this.speed = Math.random() * 3 + 1;
+  }
+  update(mouse) {
+    // Distância do mouse ao drop
+    const dx = this.x - mouse.x;
+    const dy = this.y - mouse.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    // Se estiver perto do mouse, acelera
+    if (dist < 150) {
+      this.speed = Math.min(this.speed + 0.2, 10);
+    } else {
+      this.speed = Math.max(this.speed - 0.05, 1);
+    }
+
+    this.y += this.speed;
+    if (this.y > height) {
+      this.y = 0;
+      this.speed = Math.random() * 3 + 1;
+    }
+  }
+  draw() {
+    const text = Math.random() > 0.5 ? '0' : '1';
+    ctx.fillStyle = '#00FF00';
+    ctx.font = `${fontSize}px monospace`;
+    ctx.fillText(text, this.x, this.y);
+  }
+}
+
+const rainDrops = [];
+for (let i = 0; i < columns; i++) {
+  rainDrops.push(new RainDrop(i * fontSize));
+}
+
+let mouse = { x: -1000, y: -1000 };
+window.addEventListener('mousemove', e => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+function draw() {
+  ctx.fillStyle = 'rgba(10, 10, 10, 0.15)';
+  ctx.fillRect(0, 0, width, height);
+
+  for (let drop of rainDrops) {
+    drop.update(mouse);
+    drop.draw();
+  }
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+const foto = document.querySelector('header img');
+
+foto.addEventListener('click', () => {
+  foto.classList.toggle('zoomed');
+});
+</script>
+</body>
+</html>
